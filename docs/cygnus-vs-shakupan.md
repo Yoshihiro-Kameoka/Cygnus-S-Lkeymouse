@@ -39,7 +39,7 @@ Cygnus は **shakupan と同じ新世代スタック**（badjeff PMW3610 + ZMK P
 | 項目 | Cygnus | shakupan |
 |---|---|---|
 | スクロール有効レイヤー | **6 / 7**（`win_scroll` / `mac_scroll`） | 6 / 7（同趣旨） |
-| スクロール倍率 | `zip_scroll_scaler 1 5` | `1 20`（かなり精密／遅い） |
+| スクロール倍率 | `zip_scroll_scaler 1 10`（sayu 1/5 と shakupan 1/20 の中間） | `1 20`（かなり精密／遅い） |
 | センサ invert | 当面オフ（実機で調整） | `invert-x` / `invert-y` 有効（COROPIT 前提） |
 | listener の常時変換 | Y 反転 | Y 反転など |
 | BLE 間隔 | **固定 7.5ms**（min=max=6） | 7.5〜15ms |
@@ -101,7 +101,7 @@ Cygnus は **shakupan と同じ新世代スタック**（badjeff PMW3610 + ZMK P
 ## 6. 意図的に寄せていないもの
 
 1. shakupan のキー配列そのもの
-2. スクロール 1/20 の体感（Cygnus は当面 1/5。実機で調整）
+2. スクロール 1/20 の体感（Cygnus は当面 1/10。実機で再調整可）
 3. COROPIT 向け invert-x/y
 4. USB 1000Hz
 5. function 層・ble の OS 二重化

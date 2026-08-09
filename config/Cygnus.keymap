@@ -208,10 +208,10 @@
 
         mac_scroll {
             bindings = <
-&kp ESC         &trans          &kp UP_ARROW    &trans     &kp LG(LC(LS(NUMBER_4)))                      &kp LC(LEFT_ARROW)  &trans    &kp LG(TAB)  &trans    &kp LC(RIGHT_ARROW)
-&kp TAB         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &trans                    &trans      &trans  &mkp MB4            &mkp MB1  &trans       &mkp MB2  &mkp MB5
-&kp LEFT_SHIFT  &kp LG(X)       &kp LG(C)       &kp LG(V)  &kp LG(B)                 &trans      &trans  &kp HOME            &trans    &trans       &trans    &kp END
-&trans          &trans          &trans          &trans     &trans                    &trans      &trans  &trans                                               &trans
+&kp ESC         &trans          &kp UP_ARROW    &trans     &kp LG(LC(LS(NUMBER_4)))                      &kp LC(LEFT_ARROW)  &trans    &kp RC(UP_ARROW)  &trans    &kp LC(RIGHT_ARROW)
+&kp TAB         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &trans                    &trans      &trans  &mkp MB4            &mkp MB1  &trans            &mkp MB2  &mkp MB5
+&kp LEFT_SHIFT  &kp LG(X)       &kp LG(C)       &kp LG(V)  &kp LG(B)                 &trans      &trans  &kp HOME            &trans    &trans            &trans    &kp END
+&trans          &trans          &trans          &trans     &trans                    &trans      &trans  &trans                                                    &trans
             >;
         };
 
