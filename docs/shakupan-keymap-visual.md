@@ -67,11 +67,12 @@
 | **K** | スクロール層へホールド（`scroll_win`） |
 | 上段付近 | 中クリック（MB3）など |
 
-### スクロール（`scroll_win`）— Cygnus で試す候補
+### スクロール（`scroll_win`）— 参考（Cygnus は L1 コピー方針）
 
 ![scroll_win](./keymap-drawer/shakupan/mona2-scroll_win.svg)
 
-このレイヤー中、トラックボールは overlay 側 `scroller { layers = <6 7>; }` によりホイール相当になります（倍率は shakupan 実機で 1/20）。
+このレイヤー中、トラックボールは overlay 側 `scroller { layers = <6 7>; }` によりホイール相当になります（倍率は shakupan 実機で 1/20）。  
+shakupan の scroll は mouse とキーが近い（クリック等を残し、ボール動作だけ切替）。**Cygnus では scroll キー配列を shakupan から採らず、Layer 1 と同内容にする。**
 
 ### 数字（`num_win`）※ Cygnus ではユーザー独自を維持する層
 
