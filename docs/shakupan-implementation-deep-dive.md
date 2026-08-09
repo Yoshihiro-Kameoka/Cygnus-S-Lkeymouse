@@ -3,7 +3,10 @@
 作成日: 2026-08-08  
 対象: [shakushakupanda/zmk-config-moNa2-v2](https://github.com/shakushakupanda/zmk-config-moNa2-v2)  
 比較対象: sayu 公式ベース / 本リポ Cygnus  
-関連: [firmware-comparison-cygnus-mona2.md](./firmware-comparison-cygnus-mona2.md) / [roadmap-os-profile-layers.md](./roadmap-os-profile-layers.md)
+関連:
+- [firmware-comparison-cygnus-mona2.md](./firmware-comparison-cygnus-mona2.md)
+- [roadmap-os-profile-layers.md](./roadmap-os-profile-layers.md)
+- [shakupan-keymap-visual.md](./shakupan-keymap-visual.md)（キーマップ図）
 
 ---
 
@@ -355,6 +358,7 @@ Cygnus ロードマップ Phase 3 は、この延長そのもの。
 
 ## 参考
 
+- キーマップ図: [shakupan-keymap-visual.md](./shakupan-keymap-visual.md)  
 - 実装リポ: https://github.com/shakushakupanda/zmk-config-moNa2-v2  
 - 解説記事: https://zenn.dev/shakupan/articles/261ce435251607  
 - sayu ベース: https://github.com/sayu-hub/zmk-config-moNa2-v2  
