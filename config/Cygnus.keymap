@@ -128,7 +128,7 @@
         win_base {
             bindings = <
 &kp Q             &kp W         &kp E         &kp R               &kp T                                                              &kp Y             &kp U  &kp I      &kp O    &kp P
-&kp A             &kp S         &kp D         &kp F               &kp G                &mkp RCLK                      &lt NUM CARET  &kp H             &kp J  &kp K      &kp L    &lt WIN_SCROLL MINUS
+&kp A             &kp S         &kp D         &kp F               &kp G                &mkp RCLK                      &lt BLE CARET  &kp H             &kp J  &kp K      &kp L    &lt WIN_SCROLL MINUS
 &mt LEFT_SHIFT Z  &kp X         &kp C         &kp V               &kp B                &mkp LCLK                      &kp RS(COLON)  &kp N             &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt NUM LANGUAGE_1  &lt WIN_MOUSE SPACE  &lt WIN_SCROLL LANGUAGE_1      &kp BACKSPACE  &lt SYMBOL ENTER                             &kp DEL
             >;
@@ -141,7 +141,7 @@
         mac_base {
             bindings = <
 &kp Q             &kp W         &kp E         &kp R               &kp T                                                              &kp Y             &kp U  &kp I      &kp O    &kp P
-&kp A             &kp S         &kp D         &kp F               &kp G                &mkp RCLK                      &lt NUM CARET  &kp H             &kp J  &kp K      &kp L    &lt MAC_SCROLL MINUS
+&kp A             &kp S         &kp D         &kp F               &kp G                &mkp RCLK                      &lt BLE CARET  &kp H             &kp J  &kp K      &kp L    &lt MAC_SCROLL MINUS
 &mt LEFT_SHIFT Z  &kp X         &kp C         &kp V               &kp B                &mkp LCLK                      &kp RS(COLON)  &kp N             &kp M  &kp COMMA  &kp DOT  &mt RIGHT_SHIFT SLASH
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt NUM LANGUAGE_1  &lt MAC_MOUSE SPACE  &lt MAC_SCROLL LANGUAGE_1      &kp BACKSPACE  &lt SYMBOL ENTER                             &kp DEL
             >;
@@ -186,10 +186,10 @@
 
         mac_mouse {
             bindings = <
-&kp ESC         &trans          &kp UP_ARROW    &trans     &kp LG(LS(NUMBER_4))                      &kp LC(LEFT_ARROW)  &trans    &kp LG(TAB)     &trans    &kp LC(RIGHT_ARROW)
-&kp TAB         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &trans                &trans      &trans  &mkp MB4            &mkp MB1  &mo MAC_SCROLL  &mkp MB2  &mkp MB5
-&kp LEFT_SHIFT  &kp LG(X)       &kp LG(C)       &kp LG(V)  &kp LG(B)             &trans      &trans  &kp HOME            &trans    &trans          &trans    &kp END
-&trans          &trans          &trans          &trans     &trans                &trans      &trans  &trans                                                  &trans
+&kp ESC         &trans          &kp UP_ARROW    &trans     &kp LG(LC(LS(NUMBER_4)))                      &kp LC(LEFT_ARROW)  &trans    &kp LG(TAB)     &trans    &kp LC(RIGHT_ARROW)
+&kp TAB         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &trans                     &trans      &trans  &mkp MB4            &mkp MB1  &mo MAC_SCROLL  &mkp MB2  &mkp MB5
+&kp LEFT_SHIFT  &kp LG(X)       &kp LG(C)       &kp LG(V)  &kp LG(B)                  &trans      &trans  &kp HOME            &trans    &trans          &trans    &kp END
+&trans          &trans          &trans          &trans     &trans                     &trans      &trans  &trans                                                  &trans
             >;
         };
 
@@ -208,10 +208,10 @@
 
         mac_scroll {
             bindings = <
-&kp ESC         &trans          &kp UP_ARROW    &trans     &kp LG(LS(NUMBER_4))                      &kp LC(LEFT_ARROW)  &trans    &kp LG(TAB)  &trans    &kp LC(RIGHT_ARROW)
-&kp TAB         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &trans                &trans      &trans  &mkp MB4            &mkp MB1  &trans       &mkp MB2  &mkp MB5
-&kp LEFT_SHIFT  &kp LG(X)       &kp LG(C)       &kp LG(V)  &kp LG(B)             &trans      &trans  &kp HOME            &trans    &trans       &trans    &kp END
-&trans          &trans          &trans          &trans     &trans                &trans      &trans  &trans                                               &trans
+&kp ESC         &trans          &kp UP_ARROW    &trans     &kp LG(LC(LS(NUMBER_4)))                      &kp LC(LEFT_ARROW)  &trans    &kp LG(TAB)  &trans    &kp LC(RIGHT_ARROW)
+&kp TAB         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &trans                     &trans      &trans  &mkp MB4            &mkp MB1  &trans       &mkp MB2  &mkp MB5
+&kp LEFT_SHIFT  &kp LG(X)       &kp LG(C)       &kp LG(V)  &kp LG(B)                  &trans      &trans  &kp HOME            &trans    &trans       &trans    &kp END
+&trans          &trans          &trans          &trans     &trans                     &trans      &trans  &trans                                               &trans
             >;
         };
 

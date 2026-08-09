@@ -1,4 +1,6 @@
 #include <dt-bindings/zmk/matrix_transform.h>
+#include <dt-bindings/input/input-event-codes.h>
+#include <input/processors.dtsi>
 #include <physical_layouts.dtsi>
 
 / {
@@ -92,6 +94,14 @@
                 , <&xiao_d 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 
                 , <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 			
                 ;
+    };
+
+    // Right-hand trackball listener (enabled from Cygnus_R.overlay)
+    trackball_listener: trackball_listener {
+        compatible = "zmk,input-listener";
+        status = "disabled";
+        // Cygnus 旧設定 ORIENTATION_180 相当として、当面 Y 反転を listener で行う
+        input-processors = <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>;
     };
 
     left_encoder: encoder_left {

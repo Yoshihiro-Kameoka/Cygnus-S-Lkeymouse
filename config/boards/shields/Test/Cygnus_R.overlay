@@ -1,4 +1,6 @@
 #include "Cygnus.dtsi"
+#include <dt-bindings/input/input-event-codes.h>
+#include <input/processors.dtsi>
 
 &default_transform {
     col-offset = <6>;
@@ -7,19 +9,11 @@
 &kscan0 {
         col-gpios
             = <&xiao_d 10 GPIO_ACTIVE_HIGH>
-            , <&xiao_d 9 GPIO_ACTIVE_HIGH> 
-            , <&xiao_d 8 GPIO_ACTIVE_HIGH> 
-            , <&xiao_d 7 GPIO_ACTIVE_HIGH> 
+            , <&xiao_d 9 GPIO_ACTIVE_HIGH>
+            , <&xiao_d 8 GPIO_ACTIVE_HIGH>
+            , <&xiao_d 7 GPIO_ACTIVE_HIGH>
             , <&gpio0 10 GPIO_ACTIVE_HIGH>
             ;
-};
-
-/ {
-    trackball_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackball>;
-
-    };
 };
 
 &pinctrl {
@@ -57,10 +51,28 @@
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        // オートマウスは使わない（キーマップ側で明示的に mouse 層へ入る）
-        // Win/Mac scroll = layers 6 / 7（Cygnus.keymap と同期）
-        scroll-layers = <6 7>;
+        cpi = <600>;
+        // Cygnus 基板向け。向きが逆なら実機で invert-x / invert-y を調整
+        // swap-xy;
+        // invert-x;
+        // invert-y;
+        evt-type = <INPUT_EV_REL>;
+        x-input-code = <INPUT_REL_X>;
+        y-input-code = <INPUT_REL_Y>;
     };
 };
 
+&trackball_listener {
+    status = "okay";
+    device = <&trackball>;
 
+    // WIN_SCROLL=6 / MAC_SCROLL=7（Cygnus.keymap と同期）
+    scroller {
+        layers = <6 7>;
+        input-processors =
+            <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
+            <&zip_xy_to_scroll_mapper>,
+            <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>,
+            <&zip_scroll_scaler 1 5>;
+    };
+};

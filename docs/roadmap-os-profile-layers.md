@@ -151,20 +151,21 @@ Phase 0   現状把握・方針確定（本ドキュメント）           ← �
    ↓
 Phase 0.5 現行キーマップの正本化（Studio → Cygnus.keymap） ← 済（概ね）
    ↓
-Phase 2'  Win/Mac 二系統 + BT 連動（キーマップ先）       ← 進行中
+Phase 2'  Win/Mac 二系統 + BT 連動（キーマップ先）       ← 済（BLE 入口=CARET 長押し）
    ↓
-Phase 1   トラックボール基盤を shakupan/sayu 系へ移行   ← 後回し
+Phase 1   トラックボール基盤を shakupan/sayu 系へ移行   ← 進行中
    ↓
 Phase 3   iOS を三系統目として追加（必要なら）
    ↓
 Phase 4   速度・スクロール・エンコーダ等の体感チューニング
 ```
 
-理由（更新）:
+Phase 1 実装メモ（2026-08-09）:
 
-- キー配列の正本化ができたので、先に BT×OS の操作モデルを固める方が手戻りが少ない
-- 旧ドライバでも `scroll-layers = <6 7>` で Win/Mac スクロールは当面動く
-- 基盤移行は BT 連動が実機で使えることを確認してから行う
+- `west.yml`: `badjeff/zmk-pmw3610-driver @ zmk-0.3` + `zmk-input-processor-keybind`
+- `Cygnus_R`: `CONFIG_ZMK_POINTING`（Kconfig.defconfig）、旧 `CONFIG_PMW3610_*` / `CONFIG_ZMK_MOUSE` 削除
+- overlay: `cpi=600`、listener + `scroller { layers = <6 7>; scaler 1/5 }`
+- オートマウスなし。向きは当面 listener の Y 反転（旧 ORIENTATION_180 相当）
 
 ---
 
@@ -213,14 +214,15 @@ Phase 4   速度・スクロール・エンコーダ等の体感チューニン�
 
 ### 完了条件
 
-- [ ] push でファームが生成される
+- [x] リポ上の Phase 1 変更を入れる（west / conf / overlay / dtsi）
+- [ ] push でファームが生成される（Actions 成功）
 - [ ] 左右とも書き込み後、通常タイピングできる
 - [ ] トラックボールでカーソルが動く（向きが逆なら invert で吸収）
-- [ ] スクロール用レイヤー（仮）でボールスクロールできる
+- [ ] スクロール層 6/7 でボールスクロールできる
 
 ### やらないこと（この Phase）
 
-- Win/Mac/iOS レイヤーの本格分割
+- iOS レイヤー追加
 - キー配列の大幅変更
 - **オートマウスの再現はしない**（採用しない方針）
 
@@ -360,7 +362,8 @@ Cygnus 現状はエンコーダ `SCRL_VAL=120` でも、ボール側の体感と
 - [x] スクロール層 → **各 mouse と同内容**（`&mo` で入る）
 - [x] 記号・数字など → **ユーザー独自を維持**
 - [ ] エンコーダの目標体感（例: 1ノッチで何行相当／今の何倍にしたいか）
-- [ ] `symbol` 層への常設入口（現状キーマップ上は未配線。必要なら追加）
+- [x] BLE 入口 → **CARET 長押し**（`&lt BLE CARET`）
+- [x] `symbol` 入口 → **ENTER 長押し**
 
 ---
 
