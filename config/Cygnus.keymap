@@ -164,10 +164,10 @@
 
         symbol {
             bindings = <
-&kp QUESTION  &kp EXCLAMATION  &kp AMPERSAND      &kp PIPE          &kp BACKSLASH                                   &kp SLASH             &kp EQUAL          &kp ASTERISK     &kp PLUS          &kp PERCENT
-&kp HASH      &kp GRAVE        &kp DOUBLE_QUOTES  &kp SINGLE_QUOTE  &kp TILDE             &trans         &kp CARET  &kp LEFT_ARROW        &kp DOWN_ARROW     &kp UP_ARROW     &kp RIGHT_ARROW   &kp UNDER
-&kp AT_SIGN   &kp LESS_THAN    &kp LEFT_BRACE     &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &kp COLON      &kp SEMI   &kp LEFT_PARENTHESIS  &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &kp GREATER_THAN  &kp DOLLAR
-&trans        &trans           &trans             &trans            &trans                &trans         &trans     &trans                                                                      &trans
+&kp QUESTION  &kp EXCLAMATION  &kp AMPERSAND      &kp PIPE          &kp BACKSLASH                                   &kp SLASH              &kp EQUAL          &kp ASTERISK     &kp PLUS          &kp PERCENT
+&kp HASH      &kp GRAVE        &kp DOUBLE_QUOTES  &kp SINGLE_QUOTE  &kp TILDE             &trans         &kp CARET  &kp LEFT_ARROW         &kp DOWN_ARROW     &kp UP_ARROW     &kp RIGHT_ARROW   &kp UNDER
+&kp AT_SIGN   &kp LESS_THAN    &kp LEFT_BRACE     &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &kp COLON      &kp SEMI   &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET  &kp RIGHT_BRACE  &kp GREATER_THAN  &kp DOLLAR
+&trans        &trans           &trans             &trans            &trans                &trans         &trans     &trans                                                                       &trans
             >;
         };
 
