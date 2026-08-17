@@ -1,7 +1,7 @@
 if SHIELD_CYGNUS_R
 
 config ZMK_KEYBOARD_NAME
-    default "Cygnus_R"
+    default "Cygnus-Black"
 
 config ZMK_SPLIT
     default y
