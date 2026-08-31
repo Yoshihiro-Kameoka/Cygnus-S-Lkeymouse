@@ -53,6 +53,7 @@
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         cpi = <600>;
+        force-awake;
         // Cygnus 基板向け。向きが逆なら実機で invert-x / invert-y を調整
         // swap-xy;
         // invert-x;

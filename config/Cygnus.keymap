@@ -22,6 +22,12 @@
     quick-tap-ms = <0>;
 };
 
+&msc {
+    delay-ms = <0>;
+    time-to-max-speed-ms = <0>;
+    acceleration-exponent = <0>;
+};
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -96,11 +102,11 @@
             tapping-term-ms = <200>;
         };
 
-        ROTATE: ROTATE {
-            compatible = "zmk,behavior-sensor-rotate-var";
-            label = "ROTATE";
-            #sensor-binding-cells = <2>;
-            bindings = <&msc>, <&msc>;
+        encoder_msc_down_up: encoder_msc_down_up {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "ENCODER_MSC_DOWN_UP";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
 
             tap-ms = <20>;
         };
@@ -133,7 +139,9 @@
 &kp LCTRL         &kp LEFT_WIN  &kp LEFT_ALT  &lt NUM LANGUAGE_2  &lt WIN_MOUSE SPACE  &lt WIN_SCROLL LANGUAGE_1      &kp BACKSPACE  &lt SYMBOL ENTER                             &kp DEL
             >;
 
-            sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
+            sensor-bindings =
+                <&encoder_msc_down_up>,
+                <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         // 1: Mac base（修飾・右下 Shift は Win と共通。Space/Scroll の飛び先だけ Mac）
@@ -146,7 +154,9 @@
 &kp LEFT_GUI      &kp LEFT_CONTROL  &kp LEFT_ALT  &lt NUM LANGUAGE_2  &lt MAC_MOUSE SPACE  &lt MAC_SCROLL LANGUAGE_1      &kp BACKSPACE  &lt SYMBOL ENTER                             &kp DEL
             >;
 
-            sensor-bindings = <&ROTATE SCRL_DOWN SCRL_UP>;
+            sensor-bindings =
+                <&encoder_msc_down_up>,
+                <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         // 2: NUM（OS 共用）
