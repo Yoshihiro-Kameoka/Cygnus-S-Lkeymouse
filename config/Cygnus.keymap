@@ -90,6 +90,18 @@
 
             label = "BT_MAC2";
         };
+
+        type_tortuga: type_tortuga {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <10>;
+            tap-ms = <10>;
+            bindings =
+                <&kp LS(T) &kp O &kp R &kp T &kp U &kp G &kp A
+                 &kp NUMBER_4 &kp NUMBER_4 &kp NUMBER_1 &kp NUMBER_6
+                 &kp K &kp A &kp M &kp E>;
+            label = "TYPE_TORTUGA";
+        };
     };
 
     behaviors {
@@ -107,6 +119,15 @@
             label = "ENCODER_MSC_DOWN_UP";
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_UP>, <&msc SCRL_DOWN>;
+
+            tap-ms = <20>;
+        };
+
+        encoder_msc_left_right: encoder_msc_left_right {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "ENCODER_MSC_LEFT_RIGHT";
+            #sensor-binding-cells = <0>;
+            bindings = <&msc SCRL_RIGHT>, <&msc SCRL_LEFT>;
 
             tap-ms = <20>;
         };
@@ -186,10 +207,14 @@
         win_mouse {
             bindings = <
 &kp ESC         &trans          &kp UP_ARROW    &trans     &kp LS(LG(S))                      &kp RS(RG(LEFT_ARROW))  &trans    &kp RG(TAB)     &trans    &kp RS(RG(RIGHT_ARROW))
-&kp TAB         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &trans         &trans      &trans  &mkp MB4                &mkp MB1  &mo WIN_SCROLL  &mkp MB2  &mkp MB5
+&kp TAB         &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &type_tortuga  &trans      &trans  &mkp MB4                &mkp MB1  &mo WIN_SCROLL  &mkp MB2  &mkp MB5
 &kp LEFT_SHIFT  &kp LC(X)       &kp LC(C)       &kp LC(V)  &kp LC(B)      &trans      &trans  &kp HOME                &trans    &trans          &trans    &kp END
 &trans          &trans          &trans          &trans     &trans         &trans      &trans  &trans                                                      &trans
             >;
+
+            sensor-bindings =
+                <&encoder_msc_left_right>,
+                <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         // 5: Mac mouse（同じ配置。修飾を Gui/Mac 相当へ）
@@ -201,6 +226,10 @@
 &kp LEFT_SHIFT  &kp LG(X)       &kp LG(C)       &kp LG(V)  &kp LG(B)                 &trans      &trans  &kp HOME            &trans    &trans            &trans    &kp END
 &trans          &trans          &trans          &trans     &trans                    &trans      &trans  &trans                                                    &trans
             >;
+
+            sensor-bindings =
+                <&encoder_msc_left_right>,
+                <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
         // 6: Windows scroll（キーは win_mouse と同内容。ボールだけホイール化）
