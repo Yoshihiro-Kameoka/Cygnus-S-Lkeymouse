@@ -1,4 +1,4 @@
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 240    // default: 10; encoder scroll amount per notch
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 300    // default: 10; encoder scroll amount per notch
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
