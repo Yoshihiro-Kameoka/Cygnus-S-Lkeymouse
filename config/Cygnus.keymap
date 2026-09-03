@@ -120,7 +120,7 @@
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
 
-            tap-ms = <30>;
+            tap-ms = <35>;
         };
 
         encoder_msc_left_right: encoder_msc_left_right {
@@ -129,7 +129,7 @@
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_RIGHT>, <&msc SCRL_LEFT>;
 
-            tap-ms = <30>;
+            tap-ms = <35>;
         };
 
         tog_on: toggle_layer_on_only {
