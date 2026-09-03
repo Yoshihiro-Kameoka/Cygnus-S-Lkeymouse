@@ -122,4 +122,15 @@
         sensors = <&left_encoder &right_encoder>;
         triggers-per-rotation = <24>;
     };
+
+    // shakupan: encoder rotation → HID scroll (in addition to keymap &msc)
+    encoder_left_listener: encoder_left_listener {
+        compatible = "zmk,input-listener";
+        device = <&left_encoder>;
+        status = "okay";
+
+        input-processors =
+            <&zip_xy_to_scroll_mapper>,
+            <&zip_scroll_scaler 1 4>;
+    };
 };
