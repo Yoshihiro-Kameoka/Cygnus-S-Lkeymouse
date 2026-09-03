@@ -1,4 +1,4 @@
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 300    // default: 10; encoder scroll amount per notch
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 125    // 24 triggers × 125 ≈ previous 10 × 300 per turn
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -120,7 +120,7 @@
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
 
-            tap-ms = <20>;
+            tap-ms = <30>;
         };
 
         encoder_msc_left_right: encoder_msc_left_right {
@@ -129,7 +129,7 @@
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_RIGHT>, <&msc SCRL_LEFT>;
 
-            tap-ms = <20>;
+            tap-ms = <30>;
         };
 
         tog_on: toggle_layer_on_only {
