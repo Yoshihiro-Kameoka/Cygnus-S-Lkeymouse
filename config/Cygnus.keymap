@@ -1,4 +1,4 @@
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 125    // 24 triggers × 125 ≈ previous 10 × 300 per turn
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 100    // 24 triggers × 100。125 より少し遅く
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
