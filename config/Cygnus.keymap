@@ -1,4 +1,4 @@
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 80     // 125 より遅く。975fddb の 100 より少し落とす
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 60     // エンコーダのみもう少し遅く（ボールは 1/100 のまま）
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
