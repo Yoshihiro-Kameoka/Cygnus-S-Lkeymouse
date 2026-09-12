@@ -65,7 +65,7 @@
 };
 
 / {
-    // 余りを持ち越して、1/20 でも切り捨てによる引っ掛かりを減らす
+    // 975fddb の 1/100。余りを持ち越して引っ掛かりを減らす
     tb_scroll_scaler: tb_scroll_scaler {
         compatible = "zmk,input-processor-scaler";
         #input-processor-cells = <2>;
@@ -80,13 +80,12 @@
     device = <&trackball>;
 
     // WIN_SCROLL=6 / MAC_SCROLL=7（Cygnus.keymap と同期）
-    // 速さは shakupan 相当の 1/20。余り追跡で段差を減らす
     scroller {
         layers = <6 7>;
         input-processors =
             <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,
             <&zip_xy_to_scroll_mapper>,
             <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>,
-            <&tb_scroll_scaler 1 20>;
+            <&tb_scroll_scaler 1 100>;
     };
 };
