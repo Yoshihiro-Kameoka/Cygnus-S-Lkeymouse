@@ -1,4 +1,4 @@
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 100    // 975fddb / shakupan（24 triggers × 100）
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 80     // 125 より遅く。975fddb の 100 より少し落とす
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -120,7 +120,7 @@
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
 
-            tap-ms = <16>;
+            tap-ms = <35>;
         };
 
         encoder_msc_left_right: encoder_msc_left_right {
@@ -129,7 +129,7 @@
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_RIGHT>, <&msc SCRL_LEFT>;
 
-            tap-ms = <16>;
+            tap-ms = <35>;
         };
 
         tog_on: toggle_layer_on_only {
