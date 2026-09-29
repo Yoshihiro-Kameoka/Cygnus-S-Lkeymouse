@@ -1,0 +1,19 @@
+---
+description: トラックボール（マウス）スクロール変更前は必ずユーザーに確認する
+alwaysApply: true
+---
+
+# Cygnus トラックボールスクロール
+
+ユーザーが**トラックボール／マウススクロール**について明示的に指示していない限り、変更しない。
+
+## 確認が必要な変更
+
+- `config/boards/shields/Test/Cygnus_R.overlay` の `trackball_listener` / `scroller` / スクロール用 input-processor（`zip_scroll_scaler`, `tb_scroll_scaler` など）
+- スクロール専用レイヤー（`WIN_SCROLL` / `MAC_SCROLL`）のトラックボール挙動に関わる keymap 変更
+
+変更前に **AskQuestion またはチャットで確認**し、OK が出るまで diff に含めない。エンコーダだけの指示で overlay を触らない。
+
+## エンコーダ（別物）
+
+左エンコーダ（`triggers-per-rotation`, `sensor-bindings`, `encoder_msc_*`, `PAGE_*` など）は、ユーザーがエンコーダについて指示したときだけ変更する。トラックボール設定を巻き込まない。

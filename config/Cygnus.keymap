@@ -1,4 +1,4 @@
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 100    // エンコーダのみ f312cee(125)より遅く（ボールは 1/25 のまま）
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 100    // マウス層エンコーダ横スクロール用
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -114,15 +114,6 @@
             tapping-term-ms = <200>;
         };
 
-        encoder_msc_down_up: encoder_msc_down_up {
-            compatible = "zmk,behavior-sensor-rotate";
-            label = "ENCODER_MSC_DOWN_UP";
-            #sensor-binding-cells = <0>;
-            bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
-
-            tap-ms = <35>;
-        };
-
         encoder_msc_left_right: encoder_msc_left_right {
             compatible = "zmk,behavior-sensor-rotate";
             label = "ENCODER_MSC_LEFT_RIGHT";
@@ -161,7 +152,7 @@
             >;
 
             sensor-bindings =
-                <&encoder_msc_down_up>,
+                <&inc_dec_kp PAGE_DOWN PAGE_UP>,
                 <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
@@ -176,7 +167,7 @@
             >;
 
             sensor-bindings =
-                <&encoder_msc_down_up>,
+                <&inc_dec_kp PAGE_DOWN PAGE_UP>,
                 <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
 
