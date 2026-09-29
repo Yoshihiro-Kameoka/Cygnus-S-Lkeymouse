@@ -1,4 +1,4 @@
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 90     // エンコーダ縦・横（5b5e7c9 の 75 より少し速く）
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 110    // エンコーダ縦・横
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
