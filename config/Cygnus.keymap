@@ -1,4 +1,4 @@
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 100    // f312cee の 125 から速度のみ低下（tap-ms 35 は維持）
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 100    // エンコーダのみ f312cee(125)より遅く（ボールは 1/25 のまま）
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
