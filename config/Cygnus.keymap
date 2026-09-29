@@ -1,4 +1,4 @@
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 70     // ベース縦スクロール（ボールよりやや速め。scaler 余りは使わない）
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 75     // tap-ms 短縮分を少し補う
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
@@ -120,7 +120,7 @@
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_DOWN>, <&msc SCRL_UP>;
 
-            tap-ms = <35>;
+            tap-ms = <20>;
         };
 
         encoder_msc_left_right: encoder_msc_left_right {
@@ -129,7 +129,7 @@
             #sensor-binding-cells = <0>;
             bindings = <&msc SCRL_RIGHT>, <&msc SCRL_LEFT>;
 
-            tap-ms = <35>;
+            tap-ms = <20>;
         };
 
         tog_on: toggle_layer_on_only {
